@@ -1,0 +1,5 @@
+test05/*.key
+test05/*.srl
+test05/*.cnf
+test05/*.crt
+test05/*.csr
