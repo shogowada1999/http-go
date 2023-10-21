@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"time"
 )
@@ -42,4 +43,12 @@ func handlerUpgrade(w http.ResponseWriter, r *http.Request) {
 		fmt.Printf("<- %s", string(recv))
 		time.Sleep(500 * time.Millisecond)
 	}
+}
+
+func main() {
+	var httpServer http.Server
+	http.HandleFunc("/upgrade", handlerUpgrade)
+	log.Println("start http listening :18888")
+	httpServer.Addr = ":18888"
+	log.Println(httpServer.ListenAndServe())
 }
