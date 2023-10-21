@@ -36,7 +36,7 @@ func main() {
 		panic(err)
 	}
 	log.Println("Status:", resp.Status)
-	log.Println("Headers", resp.Header)
+	log.Println("Headers:", resp.Header)
 
 	counter := 10
 	for {
